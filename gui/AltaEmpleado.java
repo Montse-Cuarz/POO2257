@@ -5,6 +5,8 @@
  */
 
 package mx.unam.aragon.fes.gui;
+import javax.swing.JOptionPane;
+import mx.unam.aragon.fes.Direccion;
 import mx.unam.aragon.fes.Empleado;
 /**
  *
@@ -74,7 +76,6 @@ public class AltaEmpleado extends javax.swing.JFrame {
 
         jLabel1.setText("Nombre:");
 
-        jTextField1.setText("JTextField1");
         jTextField1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField1ActionPerformed(evt);
@@ -394,8 +395,19 @@ public class AltaEmpleado extends javax.swing.JFrame {
         emp.setApMaterno(this.jTextField3.getText());
         emp.setEdad(Integer.parseInt(jTextField4.getText()));  //convierte a int 
         emp.setCurp(this.jTextField5.getText());
+        emp.setDomicilio(new Direccion());
         emp.getDomicilio().setCalle(this.jTextField6.getText());
+        emp.getDomicilio().setNumero(this.jTextField7.getText());
+        emp.getDomicilio().setColonia(this.jTextField8.getText());
+        emp.getDomicilio().setDelegacion(this.jTextField9.getText());
+        emp.getDomicilio().setEstado(this.jTextField10.getText());
+        emp.setNumeroEmpleado(Integer.parseInt(this.jTextField11.getText()));
+        emp.setDepartamento(this.jTextField12.getText());
+        emp.setSueldo(Float.parseFloat(this.jTextField13.getText()));
+        emp.setHorasExtras(Integer.parseInt(this.jTextField14.getText()));
+        int confirmar = JOptionPane.showConfirmDialog(this, "Deseas guardar estos datos");
         
+    
     }//GEN-LAST:event_jButton5MouseClicked
 
     private void limpiarformulario(){
@@ -480,4 +492,4 @@ public class AltaEmpleado extends javax.swing.JFrame {
     private java.awt.Panel panel1;
     // End of variables declaration//GEN-END:variables
 
-}
+
